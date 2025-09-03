@@ -33,15 +33,15 @@
             box-sizing: border-box;
         }
 
-        h1, h2 {
+        h1, h3 {
             color: #2c3e50;
             border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
         }
         
         h1 {
-            font-size: 2.2em;
+            font-size: 1.8em;
             text-align: center;
         }
 
@@ -57,8 +57,8 @@
 
         .section {
             background-color: #fff;
-            padding: 30px;
-            margin-bottom: 40px;
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
@@ -125,75 +125,6 @@
             background-color: #f1f1f1;
         }
 
-        /* --- Mapa Interativo --- */
-        .map-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-        
-        ul#map {
-            position: relative;
-            display: block;
-            margin: 0;
-            padding: 0;
-            width: 570px;
-            height: 585px;
-            /* IMAGEM CORRIGIDA AQUI */
-            background-image: url('https://i.imgur.com/3DoU4b8.gif');
-            transform-origin: top left;
-        }
-
-        ul#map li { display: block; padding: 0; position: absolute; }
-        ul#map li a img { border: 0; width: inherit; height: inherit; }
-        
-        /* Posições dos estados (mantido do original) */
-        li#crs {margin-top: 485px; margin-left: 237px; }
-        li#csc {margin-top: 467px; margin-left: 292px;}
-        li#cpr {margin-top: 416px; margin-left: 281px;}
-        li#csp {margin-top: 375px; margin-left: 303px; z-index:9999; }
-        li#cms {margin-top: 336px; margin-left: 229px;}
-        li#crj {margin-top: 390px; margin-left: 422px; z-index:9999; }
-        li#ces {margin-top: 347px; margin-left: 467px; z-index:9999; }
-        li#cmg {margin-top: 292px; margin-left: 333px; z-index:9998; }
-        li#cgo {margin-top: 264px; margin-left: 301px; z-index:9999; }
-        li#cdf {margin-top: 311px; margin-left: 373px; z-index:9999; }
-        li#cba {margin-top: 207px; margin-left: 397px;}
-        li#cmt {margin-top: 189px; margin-left: 180px;}
-        li#cro {margin-top: 199px; margin-left: 104px; z-index:9998; }
-        li#cac {margin-top: 185px; margin-left: 0px;}
-        li#cam {margin-top: 46px; margin-left: 3px;}
-        li#crr {margin-top: 0; margin-left: 133px;}
-        li#cpa {margin-top: 40px; margin-left: 219px;}
-        li#cap {margin-top: 13px; margin-left: 278px;}
-        li#cma {margin-top: 94px; margin-left: 366px; z-index:9999;}
-        li#cto {margin-top: 156px; margin-left: 338px;}
-        li#cse {margin-top: 221px; margin-left: 519px; z-index:9998;}
-        li#cal {margin-top: 211px; margin-left: 518px; z-index:9999;}
-        li#cpe {margin-top: 188px; margin-left: 473px;}
-        li#cpb {margin-top: 169px; margin-left: 511px; z-index:9999;}
-        li#crn {margin-top: 151px; margin-left: 514px;}
-        li#cce {margin-top: 121px; margin-left: 473px;}
-        li#cpi {margin-top: 120px; margin-left: 406px; z-index:9997;}
-        
-        /* Dimensões dos links (mantido do original) */
-        a#rs {width: 116px; height: 101px; } a#sc {width: 81px; height: 53px; }
-        a#pr {width: 97px; height: 64px; } a#sp {width: 131px; height: 84px; }
-        a#ms {width: 106px; height: 104px; } a#rj {width: 58px; height: 40px; }
-        a#es {width: 33px; height: 51px; } a#mg {width: 163px; height: 131px; }
-        a#go {width: 108px; height: 108px; } a#df {width: 16px; height: 9px; }
-        a#ba {width: 136px; height: 148px; } a#mt {width: 166px; height: 161px; }
-        a#ro {width: 104px; height: 87px; } a#ac {width: 108px; height: 62px; }
-        a#am {width: 258px; height: 181px;} a#rr {width: 87px; height: 103px; }
-        a#pa {width: 188px; height: 187px; } a#ap {width: 73px; height: 85px; }
-        a#ma {width: 102px; height: 139px; } a#to {width: 74px; height: 125px; }
-        a#se {width: 28px; height: 32px; } a#al {width: 46px; height: 27px; }
-        a#pe {width: 97px; height: 34px; } a#pb {width: 59px; height: 35px; }
-        a#rn {width: 53px; height: 33px; } a#ce {width: 61px; height: 76px; }
-        a#pi {width: 83px; height: 124px; }
-        
         #coord-tooltip {
             display: none;
             position: absolute;
@@ -217,8 +148,8 @@
                 font-size: 1.8em;
             }
             
-            h2 {
-                font-size: 1.5em;
+            h3 {
+                font-size: 1em;
             }
 
             .map-wrapper {
@@ -242,27 +173,22 @@
         <h1 class="beta-warning">VERSÃO BETA! CONFIRME OS ESTADOS COM O SEU GESTOR</h1>
         
         <section id="procedimento" class="section">
-            <h2>1. Procedimento para abertura de casos</h2>
+            <h3>1. Procedimento para abertura de casos</h3>
             <ol>
                 <li>Identifique a qual Estado o contrato pertence.</li>
                 <li>Pesquise pela sigla ou nome do estado. Exemplo: SP ou São Paulo.</li>
                 <li>Realize a abertura do caso conforme as seguintes filas:</li>
             </ol>
             <ul>
-                <li><span class="coord peregrino">Peregrino - Leonardo Chaves</span></li>
-                <li>Falcon Peregrino</li>
-                <li>Coruja Peregrino</li>
-                <br>
-                <li><span class="coord sacre">Sacre - Alexandre Donegá</span></li>
-                <li>Falcon Sacre</li>
-                <li>Coruja Sacre</li>
+                <li><span class="coord peregrino">Peregrino - Leonardo Chaves</span> - Falcon Peregrino / Coruja Peregrino</li>
+                <li><span class="coord sacre">Sacre - Alexandre Donegá</span> - Falcon Sacre / Coruja Sacre</li>
             </ul>
         </section>
 
         <section id="divisao" class="section">
-            <h2>2. Divisão por Estado</h2>
+            <h3>2. Divisão por Estado</h3>
             <div style="margin-bottom:14px;">
-                <label for="filtro-estado" style="font-weight:bold;">Pesquisar estado:</label><br>
+                <label for="filtro-estado" style="font-weight:bold;">Pesquisar Estado:</label><br>
                 <input type="text" id="filtro-estado" placeholder="Digite nome ou sigla..." style="margin-top: 5px;">
             </div>
             <div class="table-container">
