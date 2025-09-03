@@ -463,35 +463,48 @@
         // Tooltip
         const tooltip = document.getElementById('coord-tooltip');
         // Adiciona eventos aos estados
-        document.querySelectorAll('#map li a').forEach(a => {
-            a.addEventListener('mouseenter', e => {
-                const estado = a.id;
-                const coord = estadoCoord[estado];
-                if (coord) {
-                    a.style.boxShadow = `0 0 0 4px ${coordColor[coord]}`;
-                    tooltip.textContent = coord;
-                    tooltip.style.display = 'block';
-                    tooltip.style.background = coordColor[coord];
-                }
-            });
-            a.addEventListener('mousemove', e => {
-                tooltip.style.left = (e.pageX + 15) + 'px';
-                tooltip.style.top = (e.pageY - 10) + 'px';
-            });
-            a.addEventListener('mouseleave', e => {
-                a.style.boxShadow = '';
-                tooltip.style.display = 'none';
-            });
-            // Adiciona evento de clique para preencher o campo de pesquisa e disparar o filtro
-            a.addEventListener('click', e => {
-                e.preventDefault();
-                const sigla = a.id;
-                document.getElementById('filtro-estado').value = sigla.toUpperCase();
-                // Dispara o evento de input para atualizar a tabela
-                const inputEvent = new Event('input', { bubbles: true });
-                document.getElementById('filtro-estado').dispatchEvent(inputEvent);
-            });
-        });
+        // Adiciona eventos aos estados
+document.querySelectorAll('#map li a').forEach(a => {
+    a.addEventListener('mouseenter', e => {
+        const estado = a.id;
+        const coord = estadoCoord[estado];
+        if (coord) {
+            a.style.boxShadow = `0 0 0 4px ${coordColor[coord]}`;
+            tooltip.textContent = coord;
+            tooltip.style.display = 'block';
+            tooltip.style.background = coordColor[coord];
+            
+            // NOVO CÓDIGO AQUI
+            if (coord === 'Peregrino - Leonardo Chaves') {
+                tooltip.style.color = '#ffffff'; // Cor da fonte branca
+            } else {
+                tooltip.style.color = '#000000'; // Cor da fonte preta para os outros
+            }
+        }
+    });
+
+    a.addEventListener('mousemove', e => {
+        tooltip.style.left = (e.pageX + 15) + 'px';
+        tooltip.style.top = (e.pageY - 10) + 'px';
+    });
+
+    a.addEventListener('mouseleave', e => {
+        a.style.boxShadow = '';
+        tooltip.style.display = 'none';
+        
+        // NOVO CÓDIGO AQUI
+        tooltip.style.color = '#000000'; // Reseta a cor da fonte ao sair
+    });
+    
+    // Adiciona evento de clique para preencher o campo de pesquisa e disparar o filtro
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const sigla = a.id;
+        document.getElementById('filtro-estado').value = sigla.toUpperCase();
+        const inputEvent = new Event('input', { bubbles: true });
+        document.getElementById('filtro-estado').dispatchEvent(inputEvent);
+    });
+});
 
         // Mapeamento sigla -> nome
 const estadosNomes = {
@@ -529,15 +542,28 @@ document.getElementById('filtro-estado').addEventListener('input', function() {
     const table = document.getElementById('tabela-divisao');
     const rows = table.querySelectorAll('tbody tr');
     let found = false;
+
+    // Remove a cor de fundo de todas as linhas antes de filtrar
+    rows.forEach(row => {
+        row.style.backgroundColor = '';
+    });
+
     rows.forEach(row => {
         const estadosCell = row.cells[2].textContent;
         const estadosArr = estadosCell.split(',').map(e => e.trim());
         const nomesArr = estadosArr.map(sigla => estadosNomes[sigla.toLowerCase()] || '');
-        // Busca por sigla exata ou nome exato
+        
         const match = estadosArr.some(sigla => sigla.toLowerCase() === val) ||
                       nomesArr.some(nome => nome.toLowerCase() === val);
+        
         if (val && match) {
             row.style.display = '';
+            // Adiciona a cor de fundo com base na classe da linha
+            if (row.classList.contains('peregrino')) {
+                row.style.backgroundColor = '#a430bbc2';
+            } else if (row.classList.contains('sacre')) {
+                row.style.backgroundColor = '#fceb03ab';
+            }
             found = true;
         } else {
             row.style.display = 'none';
@@ -590,5 +616,3 @@ document.getElementById('filtro-estado').addEventListener('input', function() {
 </html>
 </body>
 </html>
-
-
