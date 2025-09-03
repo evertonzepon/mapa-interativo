@@ -506,7 +506,7 @@ document.querySelectorAll('#map li a').forEach(a => {
     });
 });
 
-        // Mapeamento sigla -> nome
+// Mapeamento sigla -> nome
 const estadosNomes = {
     'ac': 'Acre',
     'al': 'Alagoas',
@@ -543,9 +543,10 @@ document.getElementById('filtro-estado').addEventListener('input', function() {
     const rows = table.querySelectorAll('tbody tr');
     let found = false;
 
-    // Remove a cor de fundo de todas as linhas antes de filtrar
+    // Remove a cor de fundo e da fonte de todas as linhas antes de filtrar
     rows.forEach(row => {
         row.style.backgroundColor = '';
+        row.style.color = ''; // Reseta a cor da fonte
     });
 
     rows.forEach(row => {
@@ -558,12 +559,16 @@ document.getElementById('filtro-estado').addEventListener('input', function() {
         
         if (val && match) {
             row.style.display = '';
+            
             // Adiciona a cor de fundo com base na classe da linha
             if (row.classList.contains('peregrino')) {
                 row.style.backgroundColor = '#a430bbc2';
+                row.style.color = '#ffffff'; // Cor da fonte branca
             } else if (row.classList.contains('sacre')) {
                 row.style.backgroundColor = '#fceb03ab';
+                row.style.color = '#000000'; // Cor da fonte preta
             }
+            
             found = true;
         } else {
             row.style.display = 'none';
