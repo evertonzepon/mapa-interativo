@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atribuição por Estado - Falcons e Corujas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <dialog id="info-dialog">
+        <section id="procedimento">
+            <h2>Procedimento para abertura de casos</h2>
+            <ol style="text-align: left;">
+                <li>Identifique a qual Estado o contrato pertence.</li>
+                <li>Pesquise pela sigla ou nome do estado. Exemplo: SP ou São Paulo.</li>
+                <li>Realize a abertura do caso conforme as seguintes filas:</li>
+            </ol>
+            <div class="coord-card-container">
+                <div class="coord-card peregrino-bg">
+                    <h3>Peregrino - Leonardo Chaves</h3>
+                    <p>Falcon Peregrino</p>
+                    <p>Coruja Peregrino</p>
+                </div>
+                <div class="coord-card sacre-bg">
+                    <h3>Sacre - Alexandre Donegá</h3>
+                    <p>Falcon Sacre</p>
+                    <p>Coruja Sacre</p>
+                </div>
+            </div>
+        </section>
+        <button id="close-dialog-btn">Entendido</button>
+    </dialog>
+
+    <div class="container">
+        <header>
+            <h1>Atribuição por Estado - Falcons e Corujas</h1>
+        </header>
+
+        <main>
+            <h1 class="beta-warning">VERSÃO BETA! CONFIRME OS DADOS COM O SEU GESTOR!</h1>
+            
+            <div class="main-content-wrapper">
+                <div class="info-column">
+                    <section class="section">
+                        <h2>Divisão por Estado</h2>
+                        <div style="margin-bottom:14px;">
+                            <label for="filtro-estado" style="font-weight:bold;">Pesquisar estado:</label>
+                            <div class="search-container">
+                                <input type="text" id="filtro-estado" placeholder="Digite nome ou sigla...">
+                                <button id="limpar-filtro-btn">✖</button>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                             <div id="table-placeholder">
+                                 Selecione um estado no mapa ou use a pesquisa para ver as informações.
+                             </div>
+                            <div id="dynamic-info-card" style="display:none;">
+                                </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <div class="map-column">
+                    <section class="section">
+                        <h2 style="text-align: center;">Mapa Interativo por Estado</h2>
+                        <div id="svg-container"></div>
+                        <div class="legend">
+                            <span class="sw" style="background-color: var(--peregrino-color);"></span> Peregrino &nbsp;
+                            <span class="sw" style="background-color: var(--sacre-color);"></span> Sacre
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        
+        <div id="map-tooltip"></div>
+
+        <footer>
+            <p>&copy; 2025 - Zepon Solutions. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
