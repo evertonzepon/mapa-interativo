@@ -27,11 +27,11 @@
     // HTML para os mini cards
     const miniCardHtml = `
         <div id="falcon-details" class="hidden-content">
-            <p>O Falcão Peregrino é o pássaro mais rápido do mundo!</p>
+            <p>Parabéns por encontrar nosso Galináceo da Meia Noite. O Falcão Peregrino é o pássaro mais rápido do mundo!</p>
             <img src="img/peregrino.png" alt="Falcão Peregrino" class="mini-image">
         </div>
         <div id="coruja-details" class="hidden-content">
-            <p>A coruja é um animal de hábitos noturnos e com ótima visão.</p>
+            <p>Parabéns por encontrar a Coruja trabalha na escala 6x1. A coruja é um animal de hábitos noturnos e com ótima visão.</p>
             <img src="img/coruja.png" alt="Coruja" class="mini-image">
         </div>
     `;
