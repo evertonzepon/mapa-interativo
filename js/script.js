@@ -54,33 +54,33 @@
 
     // Dados de atribuição mapeados por sigla de estado
     const atribuicoes = {
-        'AC': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'AP': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'AM': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'PA': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'RO': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'RR': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'TO': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Norte', estados: 'TO', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'GO': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'MS': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'DF': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'MT': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Centro-Oeste', estados: 'MT', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'ES': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Sudeste', estados: 'ES, SP', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'SP': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Sudeste', estados: 'ES, SP', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'MG': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sudeste', estados: 'MG, RJ', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'RJ': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sudeste', estados: 'MG, RJ', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'PR': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sul', estados: 'PR, RS, SC', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'RS': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sul', estados: 'PR, RS, SC', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'SC': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sul', estados: 'PR, RS, SC', filas: 'Falcon Peregrino<br>Coruja Peregrino' },
-        'AL': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'BA': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'CE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'MA': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'PB': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'PE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'PI': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'RN': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
-        'SE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre<br>Coruja Sacre' },
+        'AC': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'AP': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'AM': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'PA': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'RO': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'RR': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'TO': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Norte', estados: 'TO', filas: 'Falcon Sacre, Coruja Sacre' },
+        'GO': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'MS': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'DF': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'MT': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Centro-Oeste', estados: 'MT', filas: 'Falcon Sacre, Coruja Sacre' },
+        'ES': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Sudeste', estados: 'ES, SP', filas: 'Falcon Sacre, Coruja Sacre' },
+        'SP': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Sudeste', estados: 'ES, SP', filas: 'Falcon Sacre, Coruja Sacre' },
+        'MG': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sudeste', estados: 'MG, RJ', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'RJ': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sudeste', estados: 'MG, RJ', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'PR': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sul', estados: 'PR, RS, SC', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'RS': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sul', estados: 'PR, RS, SC', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'SC': { responsavel: 'Peregrino - Leonardo Chaves', regiao: 'Sul', estados: 'PR, RS, SC', filas: 'Falcon Peregrino, Coruja Peregrino' },
+        'AL': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'BA': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'CE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'MA': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'PB': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'PE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'PI': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'RN': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
+        'SE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
     };
 
     const estadosNomes = estadosData.reduce((acc, curr) => {
@@ -120,7 +120,12 @@
                 dynamicInfoCard.classList.add('sacre-card-bg');
             }
 
-            // Preenche o card de informações
+            // Construir o HTML do novo card dinâmico, incluindo os links e os cards de detalhe
+            let filasHtml = atribuicao.filas.split(', ').map(fila => {
+                const tipo = fila.toLowerCase().includes('falcon') ? 'falcon' : 'coruja';
+                return `<a href="#" class="detail-link" data-card="${tipo}">${fila}</a>`;
+            }).join('<br>');
+
             dynamicInfoCard.innerHTML = `
                 <div class="info-item">
                     <span class="info-label">Responsável:</span>
@@ -136,14 +141,46 @@
                 </div>
                 <div class="info-item">
                     <span class="info-label">Filas:</span>
-                    <span class="info-value-filas">${atribuicao.filas}</span>
+                    <span class="info-value-filas">${filasHtml}</span>
+                </div>
+                <div id="detail-cards-container">
+                    <div id="falcon-card" class="detail-card" style="display: none;">
+                        <h4>Card do Falcon</h4>
+                        <img src="img/peregrino.png" alt="Imagem do Falcon">
+                    </div>
+                    <div id="coruja-card" class="detail-card" style="display: none;">
+                        <h4>Card da Coruja</h4>
+                        <img src="img/coruja.png" alt="Imagem da Coruja">
+                    </div>
                 </div>
             `;
             dynamicInfoCard.style.display = 'block';
             tablePlaceholder.style.display = 'none';
+
+            // Adiciona os eventos de clique APÓS a injeção do HTML
+            const detailLinks = dynamicInfoCard.querySelectorAll('.detail-link');
+            const falconCard = dynamicInfoCard.querySelector('#falcon-card');
+            const corujaCard = dynamicInfoCard.querySelector('#coruja-card');
+            
+            detailLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const cardType = event.target.dataset.card;
+                    
+                    // Oculta todos os cards de detalhe antes de exibir o selecionado
+                    falconCard.style.display = 'none';
+                    corujaCard.style.display = 'none';
+                    
+                    if (cardType === 'falcon') {
+                        falconCard.style.display = 'block';
+                    } else if (cardType === 'coruja') {
+                        corujaCard.style.display = 'block';
+                    }
+                });
+            });
         }
     }
-
+    
     // Lógica do mapa
     try {
         const res = await fetch(SVG_FILE);
