@@ -31,7 +31,7 @@
             <img src="img/peregrino.png" alt="Falcão Peregrino" class="mini-image">
         </div>
         <div id="coruja-details" class="hidden-content">
-            <p>Parabéns por encontrar a Coruja trabalha na escala 6x1. A coruja é um animal de hábitos noturnos e com ótima visão.</p>
+            <p>Parabéns por encontrar nossa Coruja que trabalha na escala 6x1. A coruja é um animal de hábitos noturnos e com ótima visão.</p>
             <img src="img/coruja.png" alt="Coruja" class="mini-image">
         </div>
     `;
