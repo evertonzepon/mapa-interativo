@@ -31,6 +31,15 @@
         <button id="close-dialog-btn">Entendido</button>
     </dialog>
 
+    <dialog id="image-dialog">
+        <div class="image-card-content">
+            <img id="dialog-image" src="" alt="Imagem do Animal">
+            <h4 id="dialog-title"></h4>
+            <p id="dialog-text"></p>
+        </div>
+        <button id="close-image-btn">Fechar</button>
+    </dialog>
+
     <div class="container">
         <header>
             <h1>PX FMA - Atribuição por Estado - Falcons e Corujas</h1>
@@ -53,7 +62,7 @@
                                  Selecione um estado no mapa ou use a pesquisa para ver as informações.
                              </div>
                             <div id="dynamic-info-card" style="display:none;">
-                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -74,7 +83,11 @@
         <div id="map-tooltip"></div>
 
         <footer>
-            <p>&copy; 2025 - Zepon Solutions. Todos os direitos reservados.</p>
+            <p>&copy; 2025 - <span id="zepon-trigger">Zepon Solutions</span>. Todos os direitos reservados.</p>
+            <div id="zepon-details" class="hidden-content">
+                <p>Obrigado por encontrar nosso easter egg! &#128521;</p>
+                <img id="gato-trigger" src="img/gato.png" alt="Logotipo da Zepon Solutions" class="mini-image">
+            </div>
         </footer>
     </div>
     <script src="js/script.js"></script>
