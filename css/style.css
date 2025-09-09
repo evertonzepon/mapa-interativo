@@ -1,398 +1,407 @@
+/* --- Estilos de Layout e Cores --- */
+:root {
+  --fill: #e8eef6;
+  --hover: #2b6cb0;
+  --stroke: #94a3b8;
+  --tooltip-bg: #0f172a;
+  --tooltip-color: #f8fafc;
+  --tooltip-border: #facc15;
+  --peregrino-color: #4d33aac2;
+  --sacre-color: #f8d800;
+  --card-border: #e6eef5;
+  --card-bg: #275f75;
 
-        /* --- Estilos de Layout e Cores --- */
-        :root {
-            --fill: #e8eef6;
-            --hover: #2b6cb0;
-            --stroke: #94a3b8;
-            --tooltip-bg: #0f172a;
-            --tooltip-color: #f8fafc;
-            --tooltip-border: #facc15;
-            --peregrino-color: #4d33aac2;
-            --sacre-color: #F8D800;
-            --card-border: #e6eef5;
-            --card-bg: #275F75;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
 
-            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        }
+/* Aplica box-sizing a todos os elementos para evitar barra de rolagem */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-        /* Aplica box-sizing a todos os elementos para evitar barra de rolagem */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+body {
+  font-family: "Open Sans", Inter, system-ui, Arial, sans-serif;
+  margin: 0;
+  /* background-color: #f4f7f6; */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+  background: #275f75;
+  background: linear-gradient(
+    75deg,
+    rgba(39, 95, 117, 1) 40%,
+    rgba(87, 199, 122, 1) 100%
+  );
+}
 
-        body {
-            font-family: 'Open Sans', Inter, system-ui, Arial, sans-serif;
-            margin: 0;
-           /* background-color: #f4f7f6; */
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden; /* Evita a barra de rolagem horizontal */
-            background: #275f75;
-            background: linear-gradient(75deg, rgba(39, 95, 117, 1) 40%, rgba(87, 199, 122, 1) 100%);
-        }
+#procedimento {
+  text-align: left;
+  margin-bottom: 20px;
+}
 
-        #procedimento {
-            text-align: left;
-            margin-bottom: 20px;
-        }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+header {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #2c3e50;
+  color: #fff;
+  margin-bottom: 20px;
+}
 
-        header {
-            width: 100%;
-            text-align: center;
-            padding: 20px 0;
-            background-color: #2c3e50;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-        
-        header h1 {
-            color: #fff;
-            border-bottom: none;
-            padding-bottom: 0;
-            margin: 0;
-        }
+header h1 {
+  color: #fff;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 0;
+}
 
-        input{
-            background-color: #2c3e50;
-            color: #ffffff;
-        }
+input {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
 
-        input::placeholder {
-            color: #ffffff;
-        }
+input::placeholder {
+  color: #ffffff;
+}
 
-        h1.beta-warning {
-            color: #c0392b;
-            font-size: 1.2em;
-            text-align: center;
-            border: none;
-            background-color: #f2dede;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .main-content-wrapper {
-            display: none; /* Oculta o conteúdo principal por padrão */
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .info-column,
-        .map-column {
-            flex: 1;
-            min-width: 300px;
-            display: flex; /* Permite que os cards internos se alinhem verticalmente */
-            flex-direction: column;
-        }
-        
-        .section {
-            background-color: var(--card-bg);
-            border: 1px solid rgb(255, 255, 255);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            flex-grow: 1; /* Faz com que os cards cresçam para preencher o espaço, mantendo a mesma altura */
-        }
-        
-        h2 {
-            color: #ffffff;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        
-        /* --- Estilos do Mapa SVG --- */
-        #svg-container {
-            background: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(15,23,42,0.08);
-            padding: 10px;
-        }
-        
-        #svg-container svg { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-        }
+h1.beta-warning {
+  color: #c0392b;
+  font-size: 1.2em;
+  text-align: center;
+  border: none;
+  background-color: #f2dede;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
 
-        #svg-container svg path {
-            fill: var(--fill);
-            stroke: var(--stroke);
-            stroke-width: 0.8;
-            transition: fill .12s, stroke-width .12s, filter .12s;
-            cursor: pointer;
-        }
+.main-content-wrapper {
+  display: none; /* Oculta o conteúdo principal por padrão */
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-        #svg-container svg path:hover {
-            fill: var(--hover);
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
-        }
+.info-column,
+.map-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex; /* Permite que os cards internos se alinhem verticalmente */
+  flex-direction: column;
+}
 
-        /* Classes de categorias do mapa */
-        .peregrino-map { fill: var(--peregrino-color) !important; }
-        .sacre-map { fill: var(--sacre-color) !important; }
-        .selected { 
-            stroke: var(--tooltip-border) !important;
-            stroke-width: 2 !important;
-        }
-        
-        /* Tooltip do mapa */
-        #map-tooltip {
-            position: fixed;
-            z-index: 9999;
-            display: inline-block;
-            padding: 8px 12px;
-            font-size: 13px;
-            border-radius: 8px;
-            background: var(--tooltip-bg);
-            color: var(--tooltip-color);
-            border: 2px solid var(--tooltip-border);
-            pointer-events: none;
-            transform: translate(-50%, -120%);
-            white-space: nowrap;
-            visibility: hidden;
-        }
+.section {
+  background-color: var(--card-bg);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  flex-grow: 1; /* Faz com que os cards cresçam para preencher o espaço, mantendo a mesma altura */
+}
 
-        /* Legenda do mapa */
-        .legend {
-            display: flex;
-            flex-wrap: wrap;
-            color: white;
-            gap: 12px;
-            margin-top: 10px;
-            font-size: 14px;
-            align-items: center;
-        }
+h2 {
+  color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
 
-        .sw {
-            width: 18px;
-            height: 12px;
-            display: inline-block;
-            border: 1px solid var(--stroke);
-            border-radius: 3px;
-        }
-        
-        /* Estilos do filtro */
-        .search-container {
-            position: relative;
-            width: 100%;
-            max-width: 300px;
-            margin-bottom: 14px;
-        }
-        
-        #filtro-estado {
-            padding: 10px 40px 10px 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
-            font-size: 1em;
-        }
-        
-        #limpar-filtro-btn {
-            position: absolute;
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            font-size: 18px;
-            color: #999;
-        }
-        
-        /* Estilos do novo card de informações */
-        #dynamic-info-card {
-            display: none; /* Inicia oculto */
-            margin-top: 20px;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #ffffff;
-        }
+/* --- Estilos do Mapa SVG --- */
+#svg-container {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  padding: 10px;
+}
 
-        .info-item {
-            margin-bottom: 15px;
-        }
+#svg-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-        label {
-            color: white;
-        }
+#svg-container svg path {
+  fill: var(--fill);
+  stroke: var(--stroke);
+  stroke-width: 0.8;
+  transition: fill 0.12s, stroke-width 0.12s, filter 0.12s;
+  cursor: pointer;
+}
 
-        .info-label {
-            font-weight: bold;
-            color: #ffffff;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .info-value {
-            font-size: 1em;
-            color: #ffffff;
-        }
-        
-        .info-value-filas {
-            font-size: 1em;
-            color: #ffffff;
-            line-height: 1.5;
-        }
-        
-        /* Placeholder para a tabela vazia */
-        #table-placeholder {
-            text-align: center;
-            font-style: italic;
-            background-color: #3c774e;
-            color: #ffffff;
-            padding: 20px;
-            border: 1px dashed #ccc;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        
-        /* Estilos do Dialog (Modal) */
-        dialog {
-            border: none;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 0 15px rgba(39, 95, 117, 0.8), /* Neon principal */
-                        0 0 25px rgba(39, 95, 117, 0.6), /* Neon mais difuso */
-                        0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra original */
-            max-width: 600px;
-            background: #275f75;
-            color: #fff;
-            text-align: center;
-        }
-        
-        dialog::backdrop {
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-        }
-
-        dialog h2 {
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        
-        dialog button {
-            background-color: #275f75;
-            color: #fff;
-            border: white 2px solid;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 20px;
-            transition: background-color 0.2s;
-        }
-        
-        dialog button:hover {
-            background-color: #34495e;
-        }
-
-        /* Novo estilo para os cards de coordenador no dialog */
-        .coord-card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: space-around;
-        }
-
-        .coord-card {
-            padding: 15px;
-            border-radius: 8px;
-            color: #fff;
-            text-align: left;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            flex: 1; /* Faz os cards crescerem para ocupar o espaço disponível */
-            min-width: 200px;
-            max-width: 48%; /* Adicione um max-width para telas maiores */
-        }
-
-        .coord-card h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .coord-card p {
-            margin: 5px 0;
-            font-size: 0.9em;
-        }
-        
-        .coord-card.peregrino-bg {
-            background-color: var(--peregrino-color);
-            border: 1px solid var(--card-border);
-        }
-
-        .coord-card.sacre-bg {
-            background-color: var(--sacre-color);
-            color: #2c3e50; /* Ajusta a cor do texto para o fundo claro */
-            border: 1px solid var(--card-border);
-        }
-
-        /* ... seu código existente ... */
+#svg-container svg path:hover {
+  fill: var(--hover);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
+}
 
 /* Classes de categorias do mapa */
 .peregrino-map {
-    fill: var(--peregrino-color) !important;
+  fill: var(--peregrino-color) !important;
+}
+.sacre-map {
+  fill: var(--sacre-color) !important;
+}
+.selected {
+  stroke: var(--tooltip-border) !important;
+  stroke-width: 2 !important;
+}
+
+/* Tooltip do mapa */
+#map-tooltip {
+  position: fixed;
+  z-index: 9999;
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 8px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-color);
+  border: 2px solid var(--tooltip-border);
+  pointer-events: none;
+  transform: translate(-50%, -120%);
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+/* Legenda do mapa */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.sw {
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid var(--stroke);
+  border-radius: 3px;
+}
+
+/* Estilos do filtro */
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 14px;
+}
+
+#filtro-estado {
+  padding: 10px 40px 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 1em;
+}
+
+#limpar-filtro-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  color: #999;
+}
+
+/* Estilos do novo card de informações */
+#dynamic-info-card {
+  display: none; /* Inicia oculto */
+  margin-top: 20px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.info-item {
+  margin-bottom: 15px;
+}
+
+label {
+  color: white;
+}
+
+.info-label {
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.info-value-filas {
+  font-size: 1em;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Placeholder para a tabela vazia */
+#table-placeholder {
+  text-align: center;
+  font-style: italic;
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Estilos do Dialog (Modal) */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(39, 95, 117, 0.8),
+    /* Neon principal */ 0 0 25px rgba(39, 95, 117, 0.6),
+    /* Neon mais difuso */ 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra original */
+  max-width: 600px;
+  background: #275f75;
+  color: #fff;
+  text-align: center;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+dialog h2 {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+dialog button {
+  background-color: #275f75;
+  color: #fff;
+  border: white 2px solid;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+}
+
+dialog button:hover {
+  background-color: #34495e;
+}
+
+/* Novo estilo para os cards de coordenador no dialog */
+.coord-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+}
+
+.coord-card {
+  padding: 15px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Faz os cards crescerem para ocupar o espaço disponível */
+  min-width: 200px;
+  max-width: 48%; /* Adicione um max-width para telas maiores */
+}
+
+.coord-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.coord-card p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.coord-card.peregrino-bg {
+  background-color: var(--peregrino-color);
+  border: 1px solid var(--card-border);
+}
+
+.coord-card.sacre-bg {
+  background-color: var(--sacre-color);
+  color: #2c3e50; /* Ajusta a cor do texto para o fundo claro */
+  border: 1px solid var(--card-border);
+}
+
+/* ... seu código existente ... */
+
+/* Classes de categorias do mapa */
+.peregrino-map {
+  fill: var(--peregrino-color) !important;
 }
 
 .sacre-map {
-    fill: var(--sacre-color) !important;
+  fill: var(--sacre-color) !important;
 }
 
 .selected {
-    stroke: var(--tooltip-border) !important;
-    stroke-width: 2 !important;
+  stroke: var(--tooltip-border) !important;
+  stroke-width: 2 !important;
 }
 
 /* ... seu código existente ... */
 
 /* Estilos do novo card de informações */
 #dynamic-info-card {
-    display: none;
-    margin-top: 20px;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #275F75; /* Cor neutra padrão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+  display: none;
+  margin-top: 20px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #275f75; /* Cor neutra padrão */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave */
 }
 
 /* Classes para alterar a cor do card com base na seleção */
 .peregrino-card-bg {
-    background-color: var(--peregrino-color);
-    color: #fff;
+  background-color: var(--peregrino-color);
+  color: #fff;
 }
 
 .sacre-card-bg {
-    background-color: var(--sacre-color);
-    color: #2c3e50;
+  background-color: var(--sacre-color);
+  color: #2c3e50;
 }
 
 /* ... seu código existente ... */
-        
-        footer {
-            width: 100%;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: auto;
-            background-color: #2c3e50;
-            color: #fff;
-            font-size: 0.85em;
-        }
 
-        /* --- Responsividade --- */
-        @media (max-width: 900px) {
-            .main-content-wrapper {
-                flex-direction: column;
-            }
-        }
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+  background-color: #2c3e50;
+  color: #fff;
+  font-size: 0.85em;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+  .main-content-wrapper {
+    flex-direction: column;
+  }
+}
