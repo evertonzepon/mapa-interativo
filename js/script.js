@@ -12,6 +12,30 @@
     const closeBtn = document.getElementById('close-dialog-btn');
     const mainContentWrapper = document.querySelector('.main-content-wrapper');
 
+    // Elementos do easter egg do rodapé
+    const zeponTrigger = document.getElementById('zepon-trigger');
+    const zeponDetails = document.getElementById('zepon-details');
+
+    // Novos elementos para o diálogo de imagem
+    const imageDialog = document.getElementById('image-dialog');
+    const dialogImage = document.getElementById('dialog-image');
+    const dialogTitle = document.getElementById('dialog-title');
+    const dialogText = document.getElementById('dialog-text');
+    const closeImageBtn = document.getElementById('close-image-btn');
+    const gatoTrigger = document.getElementById('gato-trigger');
+
+    // HTML para os mini cards
+    const miniCardHtml = `
+        <div id="falcon-details" class="hidden-content">
+            <p>O Falcão Peregrino é o pássaro mais rápido do mundo!</p>
+            <img src="img/peregrino.png" alt="Falcão Peregrino" class="mini-image">
+        </div>
+        <div id="coruja-details" class="hidden-content">
+            <p>A coruja é um animal de hábitos noturnos e com ótima visão.</p>
+            <img src="img/coruja.png" alt="Coruja" class="mini-image">
+        </div>
+    `;
+
     // Exibe o dialog na entrada do site
     dialog.showModal();
 
@@ -21,6 +45,29 @@
         mainContentWrapper.style.display = 'flex';
     });
     
+    // Lógica do easter egg Zepon
+    zeponTrigger.addEventListener('click', () => {
+        zeponDetails.classList.toggle('expanded');
+    });
+
+    // Lógica para abrir o card de imagem
+    function openImageCard(imageSrc, title, text) {
+        dialogImage.src = imageSrc;
+        dialogTitle.textContent = title;
+        dialogText.textContent = text;
+        imageDialog.showModal();
+    }
+    
+    // Lógica para fechar o card de imagem
+    closeImageBtn.addEventListener('click', () => {
+        imageDialog.close();
+    });
+
+    // Evento de clique para a imagem do gato, que é sempre visível
+    gatoTrigger.addEventListener('click', () => {
+        openImageCard('img/gato.png', 'Gato Solutions', 'Agradecemos por encontrar nosso easter egg!');
+    });
+
     // Dados dos estados com apenas sigla e nome
     const estadosData = [
         { uf: 'AC', nome: 'Acre' },
@@ -96,7 +143,7 @@
         
         // Remove as classes de cor do card de informações
         dynamicInfoCard.classList.remove('peregrino-card-bg', 'sacre-card-bg');
-        
+
         // Limpa o card de informações e volta ao placeholder
         dynamicInfoCard.innerHTML = '';
         dynamicInfoCard.style.display = 'none';
@@ -120,10 +167,10 @@
                 dynamicInfoCard.classList.add('sacre-card-bg');
             }
 
-            // Construir o HTML do novo card dinâmico, incluindo os links e os cards de detalhe
+            // Constrói o HTML dinâmico, incluindo os links de fila
             let filasHtml = atribuicao.filas.split(', ').map(fila => {
                 const tipo = fila.toLowerCase().includes('falcon') ? 'falcon' : 'coruja';
-                return `<a href="#" class="detail-link" data-card="${tipo}">${fila}</a>`;
+                return `<span class="fila-link" data-card="${tipo}">${fila}</span>`;
             }).join('<br>');
 
             dynamicInfoCard.innerHTML = `
@@ -143,41 +190,44 @@
                     <span class="info-label">Filas:</span>
                     <span class="info-value-filas">${filasHtml}</span>
                 </div>
-                <div id="detail-cards-container">
-                    <div id="falcon-card" class="detail-card" style="display: none;">
-                        <h4>Card do Falcon</h4>
-                        <img src="img/peregrino.png" alt="Imagem do Falcon">
-                    </div>
-                    <div id="coruja-card" class="detail-card" style="display: none;">
-                        <h4>Card da Coruja</h4>
-                        <img src="img/coruja.png" alt="Imagem da Coruja">
-                    </div>
-                </div>
+                ${miniCardHtml}
             `;
-            dynamicInfoCard.style.display = 'block';
-            tablePlaceholder.style.display = 'none';
-
-            // Adiciona os eventos de clique APÓS a injeção do HTML
-            const detailLinks = dynamicInfoCard.querySelectorAll('.detail-link');
-            const falconCard = dynamicInfoCard.querySelector('#falcon-card');
-            const corujaCard = dynamicInfoCard.querySelector('#coruja-card');
             
-            detailLinks.forEach(link => {
+            // Adiciona os eventos de clique APÓS a injeção do HTML
+            const filaLinks = document.querySelectorAll('.fila-link');
+            const falconDetails = document.getElementById('falcon-details');
+            const corujaDetails = document.getElementById('coruja-details');
+
+            // Adiciona evento de clique para os nomes das filas
+            filaLinks.forEach(link => {
                 link.addEventListener('click', (event) => {
-                    event.preventDefault();
                     const cardType = event.target.dataset.card;
-                    
-                    // Oculta todos os cards de detalhe antes de exibir o selecionado
-                    falconCard.style.display = 'none';
-                    corujaCard.style.display = 'none';
-                    
                     if (cardType === 'falcon') {
-                        falconCard.style.display = 'block';
+                         falconDetails.classList.toggle('expanded');
+                         corujaDetails.classList.remove('expanded');
                     } else if (cardType === 'coruja') {
-                        corujaCard.style.display = 'block';
+                        corujaDetails.classList.toggle('expanded');
+                        falconDetails.classList.remove('expanded');
                     }
                 });
             });
+
+            // Adiciona evento de clique para as miniaturas
+            document.querySelectorAll('.mini-image').forEach(img => {
+                img.addEventListener('click', (event) => {
+                    const altText = event.target.alt;
+                    if (altText.includes('Falcão')) {
+                        openImageCard('img/peregrino.png', 'Falcão Peregrino', 'O Falcão Peregrino é o pássaro mais rápido do mundo!');
+                    } else if (altText.includes('Coruja')) {
+                        openImageCard('img/coruja.png', 'Coruja', 'A coruja é um animal de hábitos noturnos e com ótima visão.');
+                    } else if (altText.includes('Logotipo da Zepon Solutions')) {
+                        openImageCard('img/gato.png', 'Gato Solutions', 'Agradecemos por encontrar nosso easter egg!');
+                    }
+                });
+            });
+
+            dynamicInfoCard.style.display = 'block';
+            tablePlaceholder.style.display = 'none';
         }
     }
     
