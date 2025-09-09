@@ -7,9 +7,9 @@
             --tooltip-bg: #0f172a;
             --tooltip-color: #f8fafc;
             --tooltip-border: #facc15;
-            --peregrino-color: #5037aac2;
-            --sacre-color: #cabe1370;
-            --card-bg: #fff;
+            --peregrino-color: #4d33aac2;
+            --sacre-color: #F8D800;
+            --card-bg: #275F75;
             --card-border: #e6eef5;
             --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
@@ -22,10 +22,17 @@
         body {
             font-family: 'Open Sans', Inter, system-ui, Arial, sans-serif;
             margin: 0;
-            background-color: #f4f7f6;
+           /* background-color: #f4f7f6; */
             color: #333;
             line-height: 1.6;
             overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+            background: #275f75;
+            background: linear-gradient(75deg, rgba(39, 95, 117, 1) 40%, rgba(87, 199, 122, 1) 100%);
+        }
+
+        #procedimento {
+            text-align: left;
+            margin-bottom: 20px;
         }
 
         .container {
@@ -48,6 +55,11 @@
             border-bottom: none;
             padding-bottom: 0;
             margin: 0;
+        }
+
+        input{
+            background-color: rgb(184, 182, 182);
+            color: #2c3e50;
         }
 
         h1.beta-warning {
@@ -78,6 +90,7 @@
         .section {
             background-color: var(--card-bg);
             padding: 15px;
+            border-color: white;
             margin-bottom: 15px;
             border-radius: 8px;
             box-shadow: var(--card-shadow);
@@ -85,7 +98,7 @@
         }
         
         h2 {
-            color: #2c3e50;
+            color: #ffffff;
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 5px;
             margin-bottom: 10px;
@@ -148,6 +161,7 @@
         .legend {
             display: flex;
             flex-wrap: wrap;
+            color: white;
             gap: 12px;
             margin-top: 10px;
             font-size: 14px;
@@ -197,28 +211,32 @@
             margin-top: 20px;
             border-radius: 8px;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
         }
 
         .info-item {
             margin-bottom: 15px;
         }
 
+        label {
+            color: white;
+        }
+
         .info-label {
             font-weight: bold;
-            color: #2c3e50;
+            color: #ffffff;
             display: block;
             margin-bottom: 5px;
         }
 
         .info-value {
             font-size: 1em;
-            color: #555;
+            color: #ffffff;
         }
         
         .info-value-filas {
             font-size: 1em;
-            color: #555;
+            color: #ffffff;
             line-height: 1.5;
         }
         
@@ -239,9 +257,12 @@
             border: none;
             border-radius: 8px;
             padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(39, 95, 117, 0.8), /* Neon principal */
+                        0 0 25px rgba(39, 95, 117, 0.6), /* Neon mais difuso */
+                        0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra original */
             max-width: 600px;
-            background-color: #fff;
+            background: #275f75;
+            color: #fff;
             text-align: center;
         }
         
@@ -254,12 +275,13 @@
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 10px;
             margin-bottom: 20px;
+            color: #fff;
         }
         
         dialog button {
-            background-color: #2c3e50;
+            background-color: #275f75;
             color: #fff;
-            border: none;
+            border: white 2px solid;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
@@ -277,17 +299,19 @@
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            justify-content: center;
+            justify-content: space-around;
         }
 
         .coord-card {
-            padding: 15px;
-            border-radius: 8px;
-            color: #fff;
-            text-align: left;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            min-width: 200px;
-        }
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Faz os cards crescerem para ocupar o espaço disponível */
+    min-width: 200px;
+    max-width: 48%; /* Adicione um max-width para telas maiores */
+}
 
         .coord-card h3 {
             margin: 0 0 10px 0;
@@ -306,8 +330,49 @@
 
         .coord-card.sacre-bg {
             background-color: var(--sacre-color);
-            color: #333; /* Ajusta a cor do texto para o fundo claro */
+            color: #2c3e50; /* Ajusta a cor do texto para o fundo claro */
         }
+
+        /* ... seu código existente ... */
+
+/* Classes de categorias do mapa */
+.peregrino-map {
+    fill: var(--peregrino-color) !important;
+}
+
+.sacre-map {
+    fill: var(--sacre-color) !important;
+}
+
+.selected {
+    stroke: var(--tooltip-border) !important;
+    stroke-width: 2 !important;
+}
+
+/* ... seu código existente ... */
+
+/* Estilos do novo card de informações */
+#dynamic-info-card {
+    display: none;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #275F75; /* Cor neutra padrão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+/* Classes para alterar a cor do card com base na seleção */
+.peregrino-card-bg {
+    background-color: var(--peregrino-color);
+    color: #fff;
+}
+
+.sacre-card-bg {
+    background-color: var(--sacre-color);
+    color: #2c3e50;
+}
+
+/* ... seu código existente ... */
         
         footer {
             width: 100%;
@@ -316,7 +381,7 @@
             margin-top: auto;
             background-color: #2c3e50;
             color: #fff;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         /* --- Responsividade --- */
