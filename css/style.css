@@ -348,8 +348,6 @@ dialog button:hover {
   border: 1px solid var(--card-border);
 }
 
-/* ... seu código existente ... */
-
 /* Classes de categorias do mapa */
 .peregrino-map {
   fill: var(--peregrino-color) !important;
@@ -363,8 +361,6 @@ dialog button:hover {
   stroke: var(--tooltip-border) !important;
   stroke-width: 2 !important;
 }
-
-/* ... seu código existente ... */
 
 /* Estilos do novo card de informações */
 #dynamic-info-card {
@@ -386,6 +382,40 @@ dialog button:hover {
   background-color: var(--sacre-color);
   color: #2c3e50;
 }
+
+/* Novos estilos para os cards de detalhes */
+.detail-card {
+    background-color: #2c3e50;
+    color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: var(--card-shadow);
+}
+.detail-card img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid white;
+}
+.detail-card h4 {
+    margin-top: 0;
+    color: #fff;
+}
+.detail-card p {
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+.detail-link {
+    /* Remove estilos de link visuais */
+    color: inherit; /* Herda a cor do elemento pai */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: default; /* Mantém o cursor de mão para indicar que é clicável */
+}
+/* Remova a pseudoclasse :hover se você tiver uma */
 
 /* ... seu código existente ... */
 
