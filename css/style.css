@@ -277,6 +277,7 @@ dialog {
   background: #275f75;
   color: #fff;
   text-align: center;
+  z-index: 10000; /* Garante que o dialog fique acima de tudo */
 }
 
 dialog::backdrop {
@@ -383,41 +384,56 @@ dialog button:hover {
   color: #2c3e50;
 }
 
-/* Novos estilos para os cards de detalhes */
-.detail-card {
-    background-color: #2c3e50;
-    color: #fff;
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 8px;
+/* Estilos do novo card de imagem */
+.image-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 20px;
-    box-shadow: var(--card-shadow);
 }
-.detail-card img {
-    max-width: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 2px solid white;
+#image-dialog #dialog-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
-.detail-card h4 {
+#image-dialog #dialog-title {
     margin-top: 0;
     color: #fff;
 }
-.detail-card p {
+#image-dialog #dialog-text {
     color: #ccc;
     font-size: 0.9em;
 }
 
-.detail-link {
-    /* Remove estilos de link visuais */
-    color: inherit; /* Herda a cor do elemento pai */
-    text-decoration: none; /* Remove o sublinhado */
-    cursor: default; /* Mantém o cursor de mão para indicar que é clicável */
+/* Estilos para os conteúdos que expandem */
+.hidden-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
-/* Remova a pseudoclasse :hover se você tiver uma */
+.hidden-content.expanded {
+    max-height: 200px; /* Ajuste o valor se o conteúdo for maior */
+    opacity: 1;
+    padding: 10px 0;
+}
 
-/* ... seu código existente ... */
+/* Estilos para as imagens miniaturas dentro dos cards */
+.mini-image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    margin: 10px 0;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+/* Estilos para os links de gatilho */
+#zepon-trigger,
+.fila-link {
+    cursor: default;
+}
 
 footer {
   width: 100%;
