@@ -7,7 +7,7 @@
     const tablePlaceholder = document.getElementById('table-placeholder');
     const SVG_FILE = 'img/brazil-states.svg';
     
-    // Novos elementos do dialog
+    // Elementos do dialog
     const dialog = document.getElementById('info-dialog');
     const closeBtn = document.getElementById('close-dialog-btn');
     const mainContentWrapper = document.querySelector('.main-content-wrapper');
@@ -24,17 +24,22 @@
     const closeImageBtn = document.getElementById('close-image-btn');
     const gatoTrigger = document.getElementById('gato-trigger');
 
-    // HTML para os mini cards
+    // HTML para os mini cards (Falcon e Coruja)
     const miniCardHtml = `
         <div id="falcon-details" class="hidden-content">
-            <p>Parabéns por encontrar nosso Galináceo da Meia Noite. O Falcão Peregrino é o pássaro mais rápido do mundo!</p>
+            <p>O Falcão Peregrino é o pássaro mais rápido do mundo!</p>
             <img src="img/peregrino.png" alt="Falcão Peregrino" class="mini-image">
         </div>
         <div id="coruja-details" class="hidden-content">
-            <p>Parabéns por encontrar nossa Coruja que dorme 3 horas por dia. A coruja é um animal de hábitos noturnos e com ótima visão.</p>
+            <p>A Coruja é um animal de hábitos noturnos e com ótima visão.</p>
             <img src="img/coruja.png" alt="Coruja" class="mini-image">
         </div>
     `;
+
+    // Contadores para os easter eggs
+    let zeponClickCount = 0;
+    let falconClickCount = 0;
+    let corujaClickCount = 0;
 
     // Exibe o dialog na entrada do site
     dialog.showModal();
@@ -45,9 +50,13 @@
         mainContentWrapper.style.display = 'flex';
     });
     
-    // Lógica do easter egg Zepon
+    // Lógica do easter egg Zepon (Rodapé) com contador de 7 cliques
     zeponTrigger.addEventListener('click', () => {
-        zeponDetails.classList.toggle('expanded');
+        zeponClickCount++;
+        if (zeponClickCount >= 7) {
+            zeponDetails.classList.toggle('expanded');
+            zeponClickCount = 0; // Reseta o contador após exibir
+        }
     });
 
     // Lógica para abrir o card de imagem
@@ -63,41 +72,28 @@
         imageDialog.close();
     });
 
-    // Evento de clique para a imagem do gato, que é sempre visível
+    // Evento de clique para a imagem do gato (Easter Egg)
     gatoTrigger.addEventListener('click', () => {
         openImageCard('img/gato.png', 'Gato Solutions', 'Agradecemos por encontrar nosso easter egg!');
     });
 
-    // Dados dos estados com apenas sigla e nome
+    // Dados dos estados
     const estadosData = [
-        { uf: 'AC', nome: 'Acre' },
-        { uf: 'AL', nome: 'Alagoas' },
-        { uf: 'AP', nome: 'Amapá' },
-        { uf: 'AM', nome: 'Amazonas' },
-        { uf: 'BA', nome: 'Bahia' },
-        { uf: 'CE', nome: 'Ceará' },
-        { uf: 'DF', nome: 'Distrito Federal' },
-        { uf: 'ES', nome: 'Espírito Santo' },
-        { uf: 'GO', nome: 'Goiás' },
-        { uf: 'MA', nome: 'Maranhão' },
-        { uf: 'MT', nome: 'Mato Grosso' },
-        { uf: 'MS', nome: 'Mato Grosso do Sul' },
-        { uf: 'MG', nome: 'Minas Gerais' },
-        { uf: 'PA', nome: 'Pará' },
-        { uf: 'PB', nome: 'Paraíba' },
-        { uf: 'PR', nome: 'Paraná' },
-        { uf: 'PE', nome: 'Pernambuco' },
-        { uf: 'PI', nome: 'Piauí' },
-        { uf: 'RJ', nome: 'Rio de Janeiro' },
-        { uf: 'RN', nome: 'Rio Grande do Norte' },
-        { uf: 'RS', nome: 'Rio Grande do Sul' },
-        { uf: 'RO', nome: 'Rondônia' },
-        { uf: 'RR', nome: 'Roraima' },
-        { uf: 'SC', nome: 'Santa Catarina' },
-        { uf: 'SP', nome: 'São Paulo' },
-        { uf: 'SE', nome: 'Sergipe' },
-        { uf: 'TO', nome: 'Tocantins' },
+        { uf: 'AC', nome: 'Acre' }, { uf: 'AL', nome: 'Alagoas' }, { uf: 'AP', nome: 'Amapá' },
+        { uf: 'AM', nome: 'Amazonas' }, { uf: 'BA', nome: 'Bahia' }, { uf: 'CE', nome: 'Ceará' },
+        { uf: 'DF', nome: 'Distrito Federal' }, { uf: 'ES', nome: 'Espírito Santo' }, { uf: 'GO', nome: 'Goiás' },
+        { uf: 'MA', nome: 'Maranhão' }, { uf: 'MT', nome: 'Mato Grosso' }, { uf: 'MS', nome: 'Mato Grosso do Sul' },
+        { uf: 'MG', nome: 'Minas Gerais' }, { uf: 'PA', nome: 'Pará' }, { uf: 'PB', nome: 'Paraíba' },
+        { uf: 'PR', nome: 'Paraná' }, { uf: 'PE', nome: 'Pernambuco' }, { uf: 'PI', nome: 'Piauí' },
+        { uf: 'RJ', nome: 'Rio de Janeiro' }, { uf: 'RN', nome: 'Rio Grande do Norte' }, { uf: 'RS', nome: 'Rio Grande do Sul' },
+        { uf: 'RO', nome: 'Rondônia' }, { uf: 'RR', nome: 'Roraima' }, { uf: 'SC', nome: 'Santa Catarina' },
+        { uf: 'SP', nome: 'São Paulo' }, { uf: 'SE', nome: 'Sergipe' }, { uf: 'TO', nome: 'Tocantins' },
     ];
+
+    const estadosNomes = estadosData.reduce((acc, curr) => {
+        acc[curr.uf] = curr.nome;
+        return acc;
+    }, {});
 
     // Dados de atribuição mapeados por sigla de estado
     const atribuicoes = {
@@ -130,21 +126,13 @@
         'SE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
     };
 
-    const estadosNomes = estadosData.reduce((acc, curr) => {
-        acc[curr.uf] = curr.nome;
-        return acc;
-    }, {});
-
     function resetAll() {
         const allPaths = document.querySelectorAll('svg path');
         allPaths.forEach(path => {
             path.classList.remove('selected', 'peregrino-map', 'sacre-map');
         });
         
-        // Remove as classes de cor do card de informações
         dynamicInfoCard.classList.remove('peregrino-card-bg', 'sacre-card-bg');
-
-        // Limpa o card de informações e volta ao placeholder
         dynamicInfoCard.innerHTML = '';
         dynamicInfoCard.style.display = 'none';
         tablePlaceholder.style.display = 'block';
@@ -156,18 +144,14 @@
         const atribuicao = atribuicoes[uf];
         
         if (path && atribuicao) {
-            // Adiciona a classe de cor da equipe e a classe de seleção
             if (atribuicao.responsavel.includes('Peregrino')) {
                 path.classList.add('peregrino-map', 'selected');
-                // Adiciona a classe de cor de fundo do card
                 dynamicInfoCard.classList.add('peregrino-card-bg');
             } else {
                 path.classList.add('sacre-map', 'selected');
-                // Adiciona a classe de cor de fundo do card
                 dynamicInfoCard.classList.add('sacre-card-bg');
             }
 
-            // Constrói o HTML dinâmico, incluindo os links de fila
             let filasHtml = atribuicao.filas.split(', ').map(fila => {
                 const tipo = fila.toLowerCase().includes('falcon') ? 'falcon' : 'coruja';
                 return `<span class="fila-link" data-card="${tipo}">${fila}</span>`;
@@ -193,33 +177,40 @@
                 ${miniCardHtml}
             `;
             
-            // Adiciona os eventos de clique APÓS a injeção do HTML
             const filaLinks = document.querySelectorAll('.fila-link');
             const falconDetails = document.getElementById('falcon-details');
             const corujaDetails = document.getElementById('coruja-details');
 
-            // Adiciona evento de clique para os nomes das filas
+            // Adiciona evento de clique para os nomes das filas (Falcon/Coruja)
             filaLinks.forEach(link => {
                 link.addEventListener('click', (event) => {
                     const cardType = event.target.dataset.card;
                     if (cardType === 'falcon') {
-                         falconDetails.classList.toggle('expanded');
-                         corujaDetails.classList.remove('expanded');
+                        falconClickCount++; // Incrementa o contador do Falcon
+                        if (falconClickCount >= 7) {
+                            falconDetails.classList.toggle('expanded');
+                            falconClickCount = 0; // Reseta o contador
+                        }
+                        corujaDetails.classList.remove('expanded'); // Garante que o outro feche
                     } else if (cardType === 'coruja') {
-                        corujaDetails.classList.toggle('expanded');
-                        falconDetails.classList.remove('expanded');
+                        corujaClickCount++; // Incrementa o contador da Coruja
+                        if (corujaClickCount >= 7) {
+                            corujaDetails.classList.toggle('expanded');
+                            corujaClickCount = 0; // Reseta o contador
+                        }
+                        falconDetails.classList.remove('expanded'); // Garante que o outro feche
                     }
                 });
             });
 
-            // Adiciona evento de clique para as miniaturas
+            // Adiciona evento de clique para as miniaturas de imagem
             document.querySelectorAll('.mini-image').forEach(img => {
                 img.addEventListener('click', (event) => {
                     const altText = event.target.alt;
                     if (altText.includes('Falcão')) {
                         openImageCard('img/peregrino.png', 'Falcão Peregrino', 'O Falcão Peregrino é o pássaro mais rápido do mundo!');
                     } else if (altText.includes('Coruja')) {
-                        openImageCard('img/coruja.png', 'Coruja', 'A coruja é um animal de hábitos noturnos e com ótima visão.');
+                        openImageCard('img/coruja.png', 'Coruja', 'A Coruja é um animal de hábitos noturnos e com ótima visão.');
                     } else if (altText.includes('Logotipo da Zepon Solutions')) {
                         openImageCard('img/gato.png', 'Gato Solutions', 'Agradecemos por encontrar nosso easter egg!');
                     }
@@ -262,7 +253,6 @@
                     tooltip.style.left = (ev.clientX + 12) + 'px';
                     tooltip.style.top = (ev.clientY - 10) + 'px';
 
-                    // Apenas adiciona a cor de hover se não estiver selecionado
                     if (!el.classList.contains('selected')) {
                         if (atribuicao.responsavel.includes('Peregrino')) {
                             el.classList.add('peregrino-map');
@@ -275,7 +265,6 @@
 
             el.addEventListener('mouseleave', () => {
                 tooltip.style.visibility = 'hidden';
-                // Remove a cor de hover apenas se não estiver selecionado
                 if (!el.classList.contains('selected')) {
                     el.classList.remove('peregrino-map', 'sacre-map');
                 }
@@ -302,7 +291,6 @@
         }
 
         let foundUf = null;
-        // Passo 1: Procurar por uma correspondência exata de sigla
         for (const estado of estadosData) {
             if (estado.uf.toLowerCase() === query) {
                 foundUf = estado.uf;
@@ -310,7 +298,6 @@
             }
         }
 
-        // Passo 2: Se não houver correspondência exata, procurar por nome
         if (!foundUf) {
             for (const estado of estadosData) {
                 if (estado.nome.toLowerCase().includes(query)) {
