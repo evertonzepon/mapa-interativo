@@ -9,8 +9,9 @@
             --tooltip-border: #facc15;
             --peregrino-color: #4d33aac2;
             --sacre-color: #F8D800;
-            --card-bg: #275F75;
             --card-border: #e6eef5;
+            --card-bg: #275F75;
+
             --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
@@ -93,8 +94,8 @@
         
         .section {
             background-color: var(--card-bg);
+            border: 1px solid rgb(255, 255, 255);
             padding: 15px;
-            border-color: white;
             margin-bottom: 15px;
             border-radius: 8px;
             box-shadow: var(--card-shadow);
@@ -113,7 +114,6 @@
             background: var(--card-bg);
             border-radius: 10px;
             box-shadow: 0 6px 18px rgba(15,23,42,0.08);
-            border: 1px solid var(--card-border);
             padding: 10px;
         }
         
