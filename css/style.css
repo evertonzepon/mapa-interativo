@@ -10,7 +10,6 @@
   --sacre-color: #f8d800;
   --card-border: #e6eef5;
   --card-bg: #275f75;
-
   --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -34,6 +33,7 @@ body {
     rgba(39, 95, 117, 1) 40%,
     rgba(87, 199, 122, 1) 100%
   );
+  min-height: 100vh;
 }
 
 #procedimento {
@@ -42,8 +42,11 @@ body {
 }
 
 .container {
+  width: 60vw;
   max-width: 1200px;
-  margin: 0 auto;
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
 }
 
@@ -346,7 +349,6 @@ dialog button:hover {
 .coord-card.sacre-bg {
   background-color: var(--sacre-color);
   color: #2c3e50; /* Ajusta a cor do texto para o fundo claro */
-  border: 1px solid var(--card-border);
 }
 
 /* Classes de categorias do mapa */
@@ -447,7 +449,26 @@ footer {
 
 /* --- Responsividade --- */
 @media (max-width: 900px) {
+  .container {
+    width: 95vw;
+    max-width: 100vw;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 8px;
+  }
   .main-content-wrapper {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2px;
   }
 }
