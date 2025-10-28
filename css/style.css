@@ -139,11 +139,18 @@ h2 {
   cursor: pointer;
 }
 
+/* ============================================= */
+/* ========= REGRA DE HOVER CORRIGIDA ========== */
+/* ============================================= */
 /* Previne que o hover azul sobrescreva os estados já coloridos */
 #svg-container svg path:not(.sacre-map):not(.peregrino-map):hover {
   fill: var(--hover);
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
 }
+/* ============================================= */
+/* ============= FIM DA CORREÇÃO =============== */
+/* ============================================= */
+
 
 /* Classes de categorias do mapa */
 .peregrino-map {
@@ -223,7 +230,7 @@ h2 {
 }
 
 /* ============================================= */
-/* ================ NOVO CÓDIGO ================ */
+/* ========= ESTILOS DOS BOTÕES NOVOS ========== */
 /* ============================================= */
 .team-filter-container {
   display: flex;
@@ -257,7 +264,7 @@ h2 {
   color: #fff; /* Cor clara para o fundo escuro */
 }
 /* ============================================= */
-/* ================ FIM DO NOVO ================ */
+/* ============= FIM DOS ESTILOS =============== */
 /* ============================================= */
 
 
