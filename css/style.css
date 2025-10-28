@@ -221,6 +221,45 @@ h2 {
   color: #999;
 }
 
+/* ============================================= */
+/* ================ NOVO CÓDIGO ================ */
+/* ============================================= */
+.team-filter-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px; /* Espaçamento antes da tabela */
+}
+
+.filter-btn {
+  flex: 1; /* Faz os botões dividirem o espaço */
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#btn-sacre {
+  background-color: var(--sacre-color);
+  color: #2c3e50; /* Cor escura para o fundo claro */
+}
+
+#btn-peregrino {
+  background-color: var(--peregrino-color);
+  color: #fff; /* Cor clara para o fundo escuro */
+}
+/* ============================================= */
+/* ================ FIM DO NOVO ================ */
+/* ============================================= */
+
+
 /* Estilos do novo card de informações */
 #dynamic-info-card {
   display: none; /* Inicia oculto */
@@ -400,7 +439,6 @@ dialog button:hover {
     margin-bottom: 15px;
 }
 #image-dialog #dialog-title {
-    margin-top: 0;
     color: #fff;
 }
 #image-dialog #dialog-text {
