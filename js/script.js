@@ -7,11 +7,13 @@
     const tablePlaceholder = document.getElementById('table-placeholder');
     const SVG_FILE = 'img/brazil-states.svg';
 
-    /* ================ NOVO CÓDIGO ================ */
-    // Seleciona os novos botões de filtro de equipe
+    // =============================================
+    // =========== CONSTANTES DOS BOTÕES ===========
+    // =============================================
     const btnSacre = document.getElementById('btn-sacre');
     const btnPeregrino = document.getElementById('btn-peregrino');
-    /* ================ FIM DO NOVO ================ */
+    // =============================================
+    // =============================================
     
     // Novos elementos do dialog
     const dialog = document.getElementById('info-dialog');
@@ -140,7 +142,9 @@
         'SE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
     };
 
-    /* ================ NOVO CÓDIGO ================ */
+    // =============================================
+    // ========= LISTAS DINÂMICAS DE EQUIPES =======
+    // =============================================
     // Cria listas de UFs para cada equipe dinamicamente a partir das atribuições
     const estadosSacre = [];
     const estadosPeregrino = [];
@@ -152,7 +156,8 @@
             estadosPeregrino.push(uf);
         }
     }
-    /* ================ FIM DO NOVO ================ */
+    // =============================================
+    // =============================================
 
 
     const estadosNomes = estadosData.reduce((acc, curr) => {
@@ -175,7 +180,9 @@
         tablePlaceholder.style.display = 'block';
     }
 
-    /* ================ NOVO CÓDIGO ================ */
+    // =============================================
+    // ========= FUNÇÃO DOS BOTÕES DE EQUIPE =======
+    // =============================================
     // Nova função para destacar todos os estados de uma equipe
     function highlightTeam(equipe) {
         // 1. Limpa o mapa, o card de info e o campo de busca
@@ -196,7 +203,8 @@
             }
         });
     }
-    /* ================ FIM DO NOVO ================ */
+    // =============================================
+    // =============================================
 
 
     function highlightState(uf) {
@@ -311,23 +319,33 @@
             const uf = el.getAttribute("id");
             const nome = estadosNomes[uf] || 'Estado';
 
+            // =============================================
+            // ============ HOVER DO MAPA CORRIGIDO ========
+            // =============================================
             el.addEventListener('mousemove', (ev) => {
                 const atribuicao = atribuicoes[uf];
                 if (atribuicao) {
                     tooltip.style.visibility = 'visible';
-                    tooltip.innerText = atribuicao.responsavel;
+                    
+                    // --- ALTERAÇÃO DO TEXTO DO TOOLTIP ---
+                    tooltip.innerText = `${uf} - ${nome}`; 
+                    // -------------------------------------
+
                     tooltip.style.left = (ev.clientX + 12) + 'px';
                     tooltip.style.top = (ev.clientY - 10) + 'px';
                     
-                    // LÓGICA DE MUDAR COR REMOVIDA DAQUI
+                    // Lógica de mudar cor no hover foi REMOVIDA daqui
+                    // para corrigir o bug de "apagar" o filtro.
                 }
             });
 
             el.addEventListener('mouseleave', () => {
                 tooltip.style.visibility = 'hidden';
                 
-                // LÓGICA DE MUDAR COR REMOVIDA DAQUI
+                // Lógica de mudar cor no hover foi REMOVIDA daqui.
             });
+            // =============================================
+            // =============================================
 
             el.addEventListener('click', () => {
                 // Lógica do easter egg para o estado do Acre com contador
@@ -388,7 +406,9 @@
         resetAll();
     });
 
-    /* ================ NOVO CÓDIGO ================ */
+    // =============================================
+    // ========= EVENTOS DOS BOTÕES DE EQUIPE ======
+    // =============================================
     // Adiciona os eventos de clique aos botões de equipe
     btnSacre.addEventListener('click', () => {
         highlightTeam('sacre');
@@ -397,6 +417,7 @@
     btnPeregrino.addEventListener('click', () => {
         highlightTeam('peregrino');
     });
-    /* ================ FIM DO NOVO ================ */
+    // =============================================
+    // =============================================
 
 })();
