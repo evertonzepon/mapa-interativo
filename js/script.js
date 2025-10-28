@@ -318,24 +318,15 @@
                     tooltip.innerText = atribuicao.responsavel;
                     tooltip.style.left = (ev.clientX + 12) + 'px';
                     tooltip.style.top = (ev.clientY - 10) + 'px';
-
-                    // Apenas adiciona a cor de hover se não estiver selecionado
-                    if (!el.classList.contains('selected')) {
-                        if (atribuicao.responsavel.includes('Peregrino')) {
-                            el.classList.add('peregrino-map');
-                        } else {
-                            el.classList.add('sacre-map');
-                        }
-                    }
+                    
+                    // LÓGICA DE MUDAR COR REMOVIDA DAQUI
                 }
             });
 
             el.addEventListener('mouseleave', () => {
                 tooltip.style.visibility = 'hidden';
-                // Remove a cor de hover apenas se não estiver selecionado
-                if (!el.classList.contains('selected')) {
-                    el.classList.remove('peregrino-map', 'sacre-map');
-                }
+                
+                // LÓGICA DE MUDAR COR REMOVIDA DAQUI
             });
 
             el.addEventListener('click', () => {
