@@ -6,6 +6,12 @@
     const dynamicInfoCard = document.getElementById('dynamic-info-card');
     const tablePlaceholder = document.getElementById('table-placeholder');
     const SVG_FILE = 'img/brazil-states.svg';
+
+    /* ================ NOVO CÓDIGO ================ */
+    // Seleciona os novos botões de filtro de equipe
+    const btnSacre = document.getElementById('btn-sacre');
+    const btnPeregrino = document.getElementById('btn-peregrino');
+    /* ================ FIM DO NOVO ================ */
     
     // Novos elementos do dialog
     const dialog = document.getElementById('info-dialog');
@@ -134,6 +140,21 @@
         'SE': { responsavel: 'Sacre - Alexandre Donegá', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: 'Falcon Sacre, Coruja Sacre' },
     };
 
+    /* ================ NOVO CÓDIGO ================ */
+    // Cria listas de UFs para cada equipe dinamicamente a partir das atribuições
+    const estadosSacre = [];
+    const estadosPeregrino = [];
+    
+    for (const uf in atribuicoes) {
+        if (atribuicoes[uf].responsavel.includes('Sacre')) {
+            estadosSacre.push(uf);
+        } else if (atribuicoes[uf].responsavel.includes('Peregrino')) {
+            estadosPeregrino.push(uf);
+        }
+    }
+    /* ================ FIM DO NOVO ================ */
+
+
     const estadosNomes = estadosData.reduce((acc, curr) => {
         acc[curr.uf] = curr.nome;
         return acc;
@@ -153,6 +174,30 @@
         dynamicInfoCard.style.display = 'none';
         tablePlaceholder.style.display = 'block';
     }
+
+    /* ================ NOVO CÓDIGO ================ */
+    // Nova função para destacar todos os estados de uma equipe
+    function highlightTeam(equipe) {
+        // 1. Limpa o mapa, o card de info e o campo de busca
+        resetAll();
+        searchInput.value = '';
+
+        const allPaths = document.querySelectorAll('svg path');
+        // Define a classe CSS e a lista de UFs com base na equipe selecionada
+        const classeMapa = equipe === 'sacre' ? 'sacre-map' : 'peregrino-map';
+        const listaEstados = equipe === 'sacre' ? estadosSacre : estadosPeregrino;
+
+        // Itera por todos os 'paths' do SVG
+        allPaths.forEach(path => {
+            const uf = path.getAttribute("id");
+            // Se o ID do path (UF) estiver na lista da equipe, aplica a classe
+            if (listaEstados.includes(uf)) {
+                path.classList.add(classeMapa);
+            }
+        });
+    }
+    /* ================ FIM DO NOVO ================ */
+
 
     function highlightState(uf) {
         resetAll();
@@ -351,4 +396,16 @@
         searchInput.value = '';
         resetAll();
     });
+
+    /* ================ NOVO CÓDIGO ================ */
+    // Adiciona os eventos de clique aos botões de equipe
+    btnSacre.addEventListener('click', () => {
+        highlightTeam('sacre');
+    });
+
+    btnPeregrino.addEventListener('click', () => {
+        highlightTeam('peregrino');
+    });
+    /* ================ FIM DO NOVO ================ */
+
 })();
