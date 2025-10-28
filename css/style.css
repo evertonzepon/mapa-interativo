@@ -139,7 +139,8 @@ h2 {
   cursor: pointer;
 }
 
-#svg-container svg path:hover {
+/* Previne que o hover azul sobrescreva os estados já coloridos */
+#svg-container svg path:not(.sacre-map):not(.peregrino-map):hover {
   fill: var(--hover);
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
 }
