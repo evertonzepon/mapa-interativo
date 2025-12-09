@@ -6,6 +6,7 @@
   --tooltip-bg: #0f172a;
   --tooltip-color: #f8fafc;
   --tooltip-border: #ffffff;
+  --lanario-color: #4e9e75;
   --peregrino-color: #4d33aac2;
   --sacre-color: #f8d800;
   --card-border: #e6eef5;
@@ -152,7 +153,9 @@ h2 {
 /* ============================================= */
 
 
-/* Classes de categorias do mapa */
+.lanario-map {
+  fill: var(--lanario-color) !important;
+}
 .peregrino-map {
   fill: var(--peregrino-color) !important;
 }
@@ -259,6 +262,11 @@ h2 {
   color: #2c3e50; /* Cor escura para o fundo claro */
 }
 
+#btn-lanario {
+  background-color: var(--lanario-color);
+  color: #fff; /* Cor clara para o fundo escuro */
+}
+
 #btn-peregrino {
   background-color: var(--peregrino-color);
   color: #fff; /* Cor clara para o fundo escuro */
@@ -301,6 +309,85 @@ label {
   font-size: 1em;
   color: #ffffff;
   line-height: 1.5;
+}
+
+/* Responsável lines styling (per-team backgrounds) */
+.responsavel-line {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.responsavel-line.lanario {
+  background-color: var(--lanario-color);
+  color: #ffffff;
+}
+.responsavel-line.peregrino {
+  background-color: var(--peregrino-color);
+  color: #ffffff;
+}
+.responsavel-line.sacre {
+  background-color: var(--sacre-color);
+  color: #2c3e50; /* dark text for yellow */
+}
+
+/* Filas (tags) styling */
+.fila-link {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin: 3px 6px 3px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+.fila-link.lanario {
+  background-color: var(--lanario-color);
+  color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.fila-link.peregrino {
+  background-color: var(--peregrino-color);
+  color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.fila-link.sacre {
+  /* Usar o amarelo de equipe como fundo e texto escuro para legibilidade */
+  background-color: var(--sacre-color);
+  color: #2c3e50; /* texto escuro para contraste */
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.fila-link:hover {
+  filter: brightness(0.95);
+  cursor: pointer;
+}
+
+/* Estilo para o bloco de Filas Motoristas (colore o fundo conforme a equipe responsável) */
+.filas-motoristas {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+.filas-motoristas.lanario {
+  background-color: var(--lanario-color);
+  color: #ffffff;
+}
+.filas-motoristas.peregrino {
+  background-color: var(--peregrino-color);
+  color: #ffffff;
+}
+.filas-motoristas.sacre {
+  background-color: var(--sacre-color);
+  color: #2c3e50;
+}
+
+/* Quando o bloco de Motoristas está com o fundo Sacre (amarelo),
+   force a legibilidade das tags internas: texto escuro e fundo sutil */
+.filas-motoristas.sacre .fila-link {
+  background-color: rgba(0,0,0,0.06);
+  color: #2c3e50 !important;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 /* Placeholder para a tabela vazia */
@@ -388,6 +475,11 @@ dialog button:hover {
   font-size: 0.9em;
 }
 
+.coord-card.lanario-bg {
+  background-color: var(--lanario-color);
+  border: 1px solid var(--card-border);
+}
+
 .coord-card.peregrino-bg {
   background-color: var(--peregrino-color);
   border: 1px solid var(--card-border);
@@ -399,10 +491,12 @@ dialog button:hover {
 }
 
 /* Classes de categorias do mapa */
+.lanario-map {
+  fill: var(--lanario-color) !important;
+}
 .peregrino-map {
   fill: var(--peregrino-color) !important;
 }
-
 .sacre-map {
   fill: var(--sacre-color) !important;
 }
@@ -423,6 +517,11 @@ dialog button:hover {
 }
 
 /* Classes para alterar a cor do card com base na seleção */
+.lanario-card-bg {
+  background-color: var(--lanario-color);
+  color: #fff;
+}
+
 .peregrino-card-bg {
   background-color: var(--peregrino-color);
   color: #fff;
