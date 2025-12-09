@@ -116,165 +116,165 @@
     // Cada entrada possui um campo `filas` que é um array de objetos com informações
     // sobre a fila: nome, tipo (falcon/coruja), role (Ajudantes/Motoristas), equipe e responsável.
     const atribuicoes = {
-        'AC': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'AC': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'AP': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'AP': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'AM': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'AM': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'PA': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'PA': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'RO': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'RO': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'RR': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'RR': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'AC, AP, AM, PA, RO, RR', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'TO': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'TO', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'TO': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Norte', estados: 'TO', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'GO': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'GO': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'MS': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'MS': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'DF': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'DF': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'GO, MS, DF', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'MT': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'MT', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'MT': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Centro-Oeste', estados: 'MT', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'ES': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sudeste', estados: 'ES, SP', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'ES': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sudeste', estados: 'ES, SP', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'SP': { responsavel: 'Lanário - José Alves (Ajudantes) / Sacre - Alexandre Donegá (Motoristas)', regiao: 'Sudeste', estados: 'ES, SP', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'SP': { responsavel: 'Lanários - José Alves (Ajudantes) / Sacre - Alexandre Donegá (Motoristas)', regiao: 'Sudeste', estados: 'ES, SP', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Sacre', tipo: 'falcon', role: 'Motoristas', equipe: 'Sacre', responsavel: 'Alexandre Donegá' },
             { name: 'Coruja Sacre', tipo: 'coruja', role: 'Motoristas', equipe: 'Sacre', responsavel: 'Alexandre Donegá' },
         ] },
-        'MG': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sudeste', estados: 'MG, RJ', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'MG': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sudeste', estados: 'MG, RJ', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'RJ': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sudeste', estados: 'MG, RJ', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'RJ': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sudeste', estados: 'MG, RJ', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'PR': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sul', estados: 'PR, RS, SC', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'PR': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sul', estados: 'PR, RS, SC', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'RS': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sul', estados: 'PR, RS, SC', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'RS': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sul', estados: 'PR, RS, SC', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'SC': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sul', estados: 'PR, RS, SC', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'SC': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Sul', estados: 'PR, RS, SC', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'AL': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'AL': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'BA': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'BA': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'CE': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'CE': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'MA': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'MA': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'PB': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'PB': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'PE': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'PE': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'PI': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'PI': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'RN': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'RN': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
-        'SE': { responsavel: 'Lanário - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
-            { name: 'Falcon Lanário', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
-            { name: 'Coruja Lanário', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanário', responsavel: 'José Alves' },
+        'SE': { responsavel: 'Lanários - José Alves (Ajudantes) / Peregrino - Leonardo Chaves (Motoristas)', regiao: 'Nordeste', estados: 'AL, BA, CE, MA, PB, PE, PI, RN, SE', filas: [
+            { name: 'Falcon Lanários', tipo: 'falcon', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
+            { name: 'Coruja Lanários', tipo: 'coruja', role: 'Ajudantes', equipe: 'Lanários', responsavel: 'José Alves' },
             { name: 'Falcon Peregrino', tipo: 'falcon', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
             { name: 'Coruja Peregrino', tipo: 'coruja', role: 'Motoristas', equipe: 'Peregrino', responsavel: 'Leonardo Chaves' },
         ] },
@@ -296,7 +296,7 @@
         if (resp.includes('Peregrino')) {
             estadosPeregrino.push(uf);
         }
-        if (resp.includes('Lanário')) {
+        if (resp.includes('Lanários')) {
             estadosLanario.push(uf);
         }
     }
@@ -373,7 +373,7 @@
                 path.classList.add('peregrino-map', 'selected');
                 // Adiciona a classe de cor de fundo do card
                 dynamicInfoCard.classList.add('peregrino-card-bg');
-            } else if (atribuicao.responsavel.includes('Lanário')) {
+            } else if (atribuicao.responsavel.includes('Lanários')) {
                 path.classList.add('lanario-map', 'selected');
                 dynamicInfoCard.classList.add('lanario-card-bg');
             }
