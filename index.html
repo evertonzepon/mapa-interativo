@@ -17,14 +17,19 @@
             
             <div class="coord-card-container">
                 <div class="coord-card peregrino-bg">
-                    <h3>Peregrino <br> Leonardo Chaves</h3>
-                    <p>Falcon Peregrino</p>
-                    <p>Coruja Peregrino</p>
+                    <h3>Peregrino - Motoristas<br> Leonardo Chaves <br> </h3>
+                    <p>Falcon Peregrino - Motoristas</p>
+                    <p>Coruja Peregrino - Motoristas</p>
+                </div>
+                <div class="coord-card lanario-bg">
+                    <h3>Lanário - Ajudantes<br> José Alves <br> </h3>
+                    <p>Falcon Lanário - Ajudantes</p>
+                    <p>Coruja Lanário - Ajudantes</p>
                 </div>
                 <div class="coord-card sacre-bg">
-                    <h3>Sacre <br> Alexandre Donegá</h3>
-                    <p>Falcon Sacre</p>
-                    <p>Coruja Sacre</p>
+                    <h3>Sacre - Motoristas<br> Alexandre Donegá <br> </h3>
+                    <p>Falcon Sacre - Motoristas</p>
+                    <p>Coruja Sacre - Motoristas</p>
                 </div>
             </div>
         </section>
@@ -58,10 +63,7 @@
                             </div>
                         </div>
 
-                        <div class="team-filter-container">
-                            <button id="btn-peregrino" class="filter-btn">Peregrino</button>
-                            <button id="btn-sacre" class="filter-btn">Sacre</button>
-                        </div>
+                        <!-- team buttons moved to the map legend for a compact UI -->
                         <div class="table-container">
                              <div id="table-placeholder">
                                  Selecione um estado no mapa ou use a pesquisa para ver as informações.
@@ -77,8 +79,9 @@
                         <h2 style="text-align: center;">Mapa Interativo por Estado</h2>
                         <div id="svg-container"></div>
                         <div class="legend">
-                            <span class="sw" style="background-color: var(--peregrino-color);"></span> Peregrino &nbsp;
-                            <span class="sw" style="background-color: var(--sacre-color);"></span> Sacre
+                            <button id="btn-peregrino" class="filter-btn legend-btn"><span class="sw" style="background-color: var(--peregrino-color);"></span> Peregrino</button>
+                            <button id="btn-lanario" class="filter-btn legend-btn"><span class="sw" style="background-color: var(--lanario-color);"></span> Lanário</button>
+                            <button id="btn-sacre" class="filter-btn legend-btn"><span class="sw" style="background-color: var(--sacre-color);"></span> Sacre</button>
                         </div>
                     </section>
                 </div>
