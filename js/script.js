@@ -57,6 +57,8 @@
     closeBtn.addEventListener('click', () => {
         dialog.close();
         mainContentWrapper.style.display = 'flex';
+        // Ajusta a altura do container quando o conteúdo principal é exibido
+        try { adjustContainerHeight(); } catch (e) { /* function may be defined later; ignore */ }
     });
     
     // Lógica do easter egg Zepon com contador de 7 cliques
@@ -65,6 +67,14 @@
         if (zeponClickCount >= 7) {
             zeponDetails.classList.toggle('expanded');
             zeponClickCount = 0; // Reseta o contador
+        }
+    });
+
+    // Ativa o trigger via teclado (Enter ou Space) para acessibilidade
+    zeponTrigger.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            zeponTrigger.click();
         }
     });
 
@@ -322,6 +332,8 @@
         dynamicInfoCard.innerHTML = '';
         dynamicInfoCard.style.display = 'none';
         tablePlaceholder.style.display = 'block';
+        // Remove estado ativo dos botões de legenda
+        setActiveButton(null);
     }
 
     // =============================================
@@ -353,6 +365,8 @@
                 path.classList.add(classeMapa);
             }
         });
+        // Marcar botão ativo
+        setActiveButton(equipe);
     }
     // =============================================
     // =============================================
@@ -481,6 +495,40 @@
 
             dynamicInfoCard.style.display = 'block';
             tablePlaceholder.style.display = 'none';
+            // Define o botão ativo com base na equipe responsável
+            if (atribuicao.responsavel.includes('Sacre')) {
+                setActiveButton('sacre');
+            } else if (atribuicao.responsavel.includes('Peregrino')) {
+                setActiveButton('peregrino');
+            } else if (atribuicao.responsavel.includes('Lanários')) {
+                setActiveButton('lanario');
+            } else {
+                setActiveButton(null);
+            }
+        }
+    }
+
+    // Função para controlar o estado visual ativo dos botões de legenda
+    function setActiveButton(team) {
+        btnSacre.classList.remove('active');
+        btnPeregrino.classList.remove('active');
+        btnLanario.classList.remove('active');
+        // Atualiza atributo aria-pressed para acessibilidade
+        btnSacre.setAttribute('aria-pressed', 'false');
+        btnPeregrino.setAttribute('aria-pressed', 'false');
+        btnLanario.setAttribute('aria-pressed', 'false');
+        if (!team) return;
+        if (team === 'sacre') {
+            btnSacre.classList.add('active');
+            btnSacre.setAttribute('aria-pressed', 'true');
+        }
+        if (team === 'peregrino') {
+            btnPeregrino.classList.add('active');
+            btnPeregrino.setAttribute('aria-pressed', 'true');
+        }
+        if (team === 'lanario') {
+            btnLanario.classList.add('active');
+            btnLanario.setAttribute('aria-pressed', 'true');
         }
     }
     
@@ -597,19 +645,59 @@
     // =============================================
     // ========= EVENTOS DOS BOTÕES DE EQUIPE ======
     // =============================================
-    // Adiciona os eventos de clique aos botões de equipe
+    // Adiciona os eventos de clique aos botões de equipe (com comportamento toggle)
     btnSacre.addEventListener('click', () => {
-        highlightTeam('sacre');
+        // Se já estiver ativo, desativa tudo; caso contrário ativa a equipe
+        if (btnSacre.classList.contains('active')) {
+            resetAll();
+        } else {
+            highlightTeam('sacre');
+        }
     });
 
     btnPeregrino.addEventListener('click', () => {
-        highlightTeam('peregrino');
+        if (btnPeregrino.classList.contains('active')) {
+            resetAll();
+        } else {
+            highlightTeam('peregrino');
+        }
     });
     
     btnLanario.addEventListener('click', () => {
-        highlightTeam('lanario');
+        if (btnLanario.classList.contains('active')) {
+            resetAll();
+        } else {
+            highlightTeam('lanario');
+        }
     });
     // =============================================
     // =============================================
+
+    // Ajusta a altura do container (`body > .container`) com base nas alturas do header e footer
+    function adjustContainerHeight() {
+        const header = document.querySelector('header');
+        const footer = document.querySelector('footer');
+        const outerContainer = document.querySelector('body > .container');
+        if (!outerContainer) return;
+        const headerH = header ? header.getBoundingClientRect().height : 0;
+        const footerH = footer ? footer.getBoundingClientRect().height : 0;
+        const available = Math.max(0, window.innerHeight - headerH - footerH);
+        // Use height to lock the container to the available space; JS will override CSS fallback
+        outerContainer.style.height = available + 'px';
+        outerContainer.style.maxHeight = 'none';
+        outerContainer.style.overflowY = 'auto';
+    }
+
+    // Debounce simples para evitar múltiplos cálculos durante resize (200ms por padrão)
+    const debounce = (fn, wait = 200) => {
+        let t;
+        return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+    };
+
+    // Atualiza em eventos relevantes
+    window.addEventListener('resize', debounce(adjustContainerHeight, 200));
+    window.addEventListener('orientationchange', debounce(adjustContainerHeight, 200));
+    window.addEventListener('load', adjustContainerHeight);
+    document.addEventListener('readystatechange', () => { if (document.readyState === 'complete') adjustContainerHeight(); });
 
 })();
