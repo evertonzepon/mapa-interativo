@@ -46,16 +46,18 @@
         <button id="close-image-btn">Fechar</button>
     </dialog>
 
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <h1>PX FMA - Atribuição por Estado - Falcons e Corujas</h1>
-        </header>
+        </div>
+    </header>
 
+    <div class="container">
         <main>
-           <div class="main-content-wrapper">
+            <div class="main-content-wrapper">
                 <div class="info-column">
                     <section class="section">
-                        <h2>Divisão por Estado</h2>
+                        <h3>Divisão por Estado</h3>
                         <div style="margin-bottom:14px;">
                             <label for="filtro-estado" style="font-weight:bold;">Pesquisar estado:</label>
                             <div class="search-container">
@@ -66,9 +68,9 @@
 
                         <!-- team buttons moved to the map legend for a compact UI -->
                         <div class="table-container">
-                             <div id="table-placeholder">
-                                 Selecione um estado no mapa ou use a pesquisa para ver as informações.
-                             </div>
+                            <div id="table-placeholder">
+                                Selecione um estado no mapa ou use a pesquisa para ver as informações.
+                            </div>
                             <div id="dynamic-info-card" style="display:none;">
                             </div>
                         </div>
@@ -77,12 +79,12 @@
                 
                 <div class="map-column">
                     <section class="section">
-                        <h2 style="text-align: center;">Mapa Interativo por Estado</h2>
+                        <h3 style="text-align: center;">Mapa Interativo por Estado</h3>
                         <div id="svg-container"></div>
                         <div class="legend">
-                            <button id="btn-peregrino" class="filter-btn legend-btn"><span class="sw" style="background-color: var(--peregrino-color);"></span>Peregrino</button>
-                            <button id="btn-lanario" class="filter-btn legend-btn"><span class="sw" style="background-color: var(--lanario-color);"></span>Lanários</button>
-                            <button id="btn-sacre" class="filter-btn legend-btn"><span class="sw" style="background-color: var(--sacre-color);"></span>Sacre</button>
+                            <button id="btn-peregrino" class="filter-btn legend-btn">Peregrino</button>
+                            <button id="btn-lanario" class="filter-btn legend-btn">Lanários</button>
+                            <button id="btn-sacre" class="filter-btn legend-btn">Sacre</button>
                         </div>
                     </section>
                 </div>
@@ -90,15 +92,35 @@
         </main>
         
         <div id="map-tooltip"></div>
+    </div>
 
-        <footer>
-            <p>&copy; 2025 - <span id="zepon-trigger">Zepon Solutions</span>. Todos os direitos reservados.</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - <span id="zepon-trigger" role="button" tabindex="0">Zepon Solutions</span>. Todos os direitos reservados.</p>
             <div id="zepon-details" class="hidden-content">
                 <p>Obrigado por encontrar nosso easter egg! &#128521;</p>
                 <img id="gato-trigger" src="img/gato.png" alt="Logotipo da Zepon Solutions" class="mini-image">
             </div>
-        </footer>
-    </div>
-    <script src="js/script.js"></script>
+        </div>
+    </footer>
+        <!-- Inline adjustment: calcula altura inicial do container com base em header/footer
+                 para reduzir flash antes do script principal carregar. Será sobrescrito
+                 pelo `js/script.js` posteriormente. -->
+        <script>
+            (function(){
+                try {
+                    var header = document.querySelector('header');
+                    var footer = document.querySelector('footer');
+                    var outer = document.querySelector('body > .container');
+                    if (!outer) return;
+                    var hh = header ? header.getBoundingClientRect().height : 0;
+                    var fh = footer ? footer.getBoundingClientRect().height : 0;
+                    var avail = Math.max(0, window.innerHeight - hh - fh);
+                    outer.style.maxHeight = avail + 'px';
+                    outer.style.overflowY = 'auto';
+                } catch (e) { /* silent */ }
+            })();
+        </script>
+        <script src="js/script.js"></script>
 </body>
 </html>
